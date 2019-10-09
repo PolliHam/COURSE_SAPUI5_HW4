@@ -1,0 +1,44 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
+	controllerName="ZSHN.COURSE_SAPUI5_HW4.controller.Products" displayBlock="true">
+	<App>
+		<pages>
+			<semantic:SemanticPage id="page" title="{i18n>productsTitle}">
+				<semantic:content>
+					<Table id="table" width="auto" items="{ path: '/', sorter: { path: 'Name', descending: false } }"
+						noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+						updateFinished=".onUpdateFinished">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>
+								<ToolbarSpacer/>
+								<SearchField id="searchField" tooltip="{i18n>productsSearchTooltip}" search=".onSearch">
+									<layoutData>
+										<OverflowToolbarLayoutData maxWidth="200px" priority="NeverOverflow"/>
+									</layoutData>
+								</SearchField>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="nameColumn">
+								<Text text="{i18n>productstableNameColumnTitle}" id="nameColumnTitle"/>
+							</Column>
+							<Column id="name2Column">
+								<Text text="{i18n>productstableNameColumn2Title}" id="nameColumn2Title"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press=".onPress">
+								<cells>
+									<ObjectIdentifier title="{Name}"/>
+								</cells>
+								<cells>
+									<ObjectIdentifier title="{Price}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</semantic:content>
+			</semantic:SemanticPage>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,25 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="ZSHN.COURSE_SAPUI5_HW4.controller.ProductDetails" xmlns:semantic="sap.m.semantic">
+	<App>
+		<pages>
+			<semantic:SemanticPage  title="{i18n>productTitle}" id="page3">
+				<semantic:content>
+					<ObjectHeader xmlns="sap.m" title="{products>/Name}" number="{products>/Price}" numberUnit="$" id="header0" intro="Category: {category>/Name}"
+						backgroundDesign="Solid">
+						<statuses>
+							<ObjectStatus text="Date of release: {products>/ReleaseDate}" state="Success" id="status0"/>
+						</statuses>
+						<attributes>
+							<ObjectAttribute text="{products>/Description}" id="attribute0"/>
+						</attributes>
+					</ObjectHeader>
+					<RatingIndicator xmlns="sap.m" maxValue="5" value="{products>/Rating}" id="indicator0"/>
+					<ObjectAttribute text="Supplier:" id="attribute2"/>
+					<ObjectIdentifier xmlns="sap.m" title="{supplier>/Name}"
+						text="Adress: {supplierAdr>/Address/Country}, {supplierAdr>/Address/State},{supplierAdr>/Address/City},{supplierAdr>/Address/Street}" titleActive="fasle"
+						id="identifier0"/>
+				</semantic:content>
+			</semantic:SemanticPage>
+		</pages>
+	</App>
+</mvc:View>
